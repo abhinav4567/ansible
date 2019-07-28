@@ -1,0 +1,9 @@
+---
+- hosts: local
+  user: root
+  sudo: True
+  vars:
+     - server_port: 8080
+  tasks:
+     - name: install ngnix
+       yum: pkg=ngnix state=installed

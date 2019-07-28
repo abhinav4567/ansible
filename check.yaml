@@ -1,0 +1,4 @@
+---
+- hosts: local
+- name: abhinav sharma
+  div: pass

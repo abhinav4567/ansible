@@ -1,0 +1,7 @@
+---
+- hosts: local
+
+  tasks:
+    - name: Install Screen
+      yum: pkg=screen state=installed
+

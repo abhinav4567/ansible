@@ -1,0 +1,10 @@
+---
+- hosts: local
+  tasks:
+     - name: install samba
+       yum: pkg=samba state=installed
+     - name: restart samba
+       service: name=smb state=restarted
+
+...
+
