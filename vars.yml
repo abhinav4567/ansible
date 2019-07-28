@@ -1,0 +1,9 @@
+---
+- hosts: local
+  vars:
+    dists:
+      dists_key: this is my my disct
+  tasks:
+    - name: test the disst
+      debug:
+        msg: "{{dists}}"

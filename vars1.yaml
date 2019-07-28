@@ -1,0 +1,15 @@
+---
+- hosts: local
+  gather_facts: false
+  vars:
+    names_lists:
+      - item1
+      - item2
+
+  tasks:
+    - name: this is test example
+      debug:
+        msg: "{{names_lists}}"
+    - name: this is for another example
+      debug:
+        msg: "{{names_lists.0}}"

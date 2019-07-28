@@ -1,0 +1,26 @@
+---
+- hosts: local  
+
+  tasks:
+    - name: Create file facts
+      file:
+        path: /etc/ansible/facts.d/
+        recurse: yes
+        state: directory
+
+  tasks:
+    - name: Copy the files
+      copy:
+        src: /root/getdate1.fact
+        dest: /etc/ansible/facts.d/
+        mode: 0755
+        
+
+  tasks:
+    - name: refresh setup
+      setup:
+
+  tasks:
+    - name: gather custom facts
+      debug:
+        msg: "{{hostvars[inventory_hostname].ansible_local.getdate1.date}}"

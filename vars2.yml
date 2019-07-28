@@ -1,0 +1,13 @@
+---
+- hosts: local
+  gather_facts: true
+  vars:
+    testvar: hello 
+
+  tasks:
+    - name: test variable
+      debug:
+        msg: "{{testvar}}"
+    - name: Port checking of client machine
+      debug:
+        msg: "{{ hostvars[ansible_host].keys() }}"
