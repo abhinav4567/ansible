@@ -1,0 +1,12 @@
+---
+- hosts: local
+  user: root
+  gather_facts: false
+  vars:
+    motd: "Welcome to the"
+
+  tasks:
+    - name: configure
+      copy:
+        content: "{{motd}}"
+        dest: /etc/motd
